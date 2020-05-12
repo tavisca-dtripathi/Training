@@ -55,7 +55,7 @@ export class ProductComponent implements OnInit {
     this.indexOdProductToUpdate = this.products.indexOf(prd);
     this.isUpdateEnable = true;
   }
-  updateProduct() : void{
+  editProduct() : void{
     this.products = this.logic.updateExistingProduct(this.products,this.product,this.indexOdProductToUpdate);
     this.clear();
     this.isUpdateEnable = false;

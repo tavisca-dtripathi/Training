@@ -23,7 +23,7 @@
             <!--Event Binding (click)-->
             <input type="button" value="New" class="btn btn-warning" (click)="clear()"/>
             <input type="button" value="Save" class="btn btn-success" [disabled] = "isUpdateEnable" (click)="save()"/>
-            <input type="button" value="Edit" class="btn btn-primary" [disabled] = "!isUpdateEnable" (click)="updateProduct()"/>
+            <input type="button" value="Edit" class="btn btn-primary" [disabled] = "!isUpdateEnable" (click)="editProduct()"/>
         </div>
     </form>
 </div>
