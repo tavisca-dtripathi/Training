@@ -14,21 +14,20 @@ var StringOperations = /** @class */ (function () {
     };
     StringOperations.prototype.GetStatements = function (inputString) {
         var statements = inputString.split(".");
-        var count = 0;
-        statements.forEach(function (v, i) {
-            if (statements[i].length > 0) {
-                statements[i] = statements[i].trim();
-                statements[i] = statements[i].replace(statements[i].charAt(0), statements[i].charAt(0).toUpperCase());
-                console.log(statements[i]);
+        var updatedStatements = new Array();
+        statements.forEach(function (statement, i) {
+            if (statement.length > 0) {
+                statement = statement.trim();
+                statement = statement.replace(statement.charAt(0), statement.charAt(0).toUpperCase());
+                updatedStatements.push(statement);
+                console.log(statement);
             }
-            else
-                statements.splice(i, 1);
         });
-        return statements;
+        return updatedStatements;
     };
     return StringOperations;
 }());
-var stringOperations = new StringOperations("Define a string variable with data of 100 characheters in it and perform the following operation on the data - Find out the indexes and occurances of character 'a' in it - Findout number of statements in the string. value after. symbol - Convert the first character of the statement in Upper case.");
+var stringOperations = new StringOperations("Define a string variable with data of 100 characheters in it and perform the following operation on the data - Find out the indexes and occurances of character 'a' in it - Findout number of statements in the string.. value after. symbol - Convert the first character of the statement in Upper case.");
 var statements = stringOperations.GetStatements(stringOperations.randomString);
 console.log("Number of Satatement = " + statements.length);
 var indexes = stringOperations.GetOccurances("a", stringOperations.randomString);

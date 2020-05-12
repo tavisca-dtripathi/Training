@@ -17,22 +17,21 @@ class StringOperations {
 
     GetStatements(inputString : string) : Array<string> {
         let statements = inputString.split(".");
-        let count = 0;
-        statements.forEach((v: string, i: number) => {
-            if(statements[i].length > 0){
-                statements[i] = statements[i].trim();
-                statements[i] = statements[i].replace(statements[i].charAt(0),statements[i].charAt(0).toUpperCase());
-                console.log(statements[i]);
+        let updatedStatements = new Array<string>();
+        statements.forEach((statement, i: number) => {
+            if(statement.length > 0){
+                statement = statement.trim();
+                statement = statement.replace(statement.charAt(0),statement.charAt(0).toUpperCase());
+                updatedStatements.push(statement)
+                console.log(statement);
             }
-            else
-            statements.splice(i,1);
         });
         
-        return statements;
+        return updatedStatements;
     }
 }
 
-let stringOperations = new StringOperations("Define a string variable with data of 100 characheters in it and perform the following operation on the data - Find out the indexes and occurances of character 'a' in it - Findout number of statements in the string. value after. symbol - Convert the first character of the statement in Upper case.");
+let stringOperations = new StringOperations("Define a string variable with data of 100 characheters in it and perform the following operation on the data - Find out the indexes and occurances of character 'a' in it - Findout number of statements in the string.. value after. symbol - Convert the first character of the statement in Upper case.");
 let statements = stringOperations.GetStatements(stringOperations.randomString);
 console.log(`Number of Satatement = ${statements.length}`);
 let indexes = stringOperations.GetOccurances("a",stringOperations.randomString);
